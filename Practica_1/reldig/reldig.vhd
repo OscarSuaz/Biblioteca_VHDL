@@ -109,28 +109,29 @@ begin
     begin
         reset <=(U and D);
     end process;
+   
+    alarma: process (n,qdh,quh,qdm,qum)
+    variable index : integer := 0;
+    begin
+        if (Qdh="0001" and Quh="0000" and Qdm="0010" and Qum="0000")then
+            while index<20 loop
+				if rising_edge (N) then
+                Qdh <= "0000";
+                Quh <= "0000";
+                Qdm <= "0000";
+                Qum <= "0000";
+				 else
+                Qdh <= "0001";
+                Quh <= "0000";
+                Qdm <= "0010";
+                Qum <= "0000";
+                index:=index+1;
+				 end if;
+            end loop;
+        end if;
+    end process;
 
-
-	alarma: process is 
-		variable index : integer := 0;
-	begin
-			if (Qdh="0001" and Quh="0000" and Qdm="0010" and Qum="0000")then
-				while index<20 loop
-					Qdh <= "0000";
-					Quh <= "0000";
-					Qdm <= "0000";
-					Qum <= "0000";
-					wait for 1 sec;
-					Qdh <= "0001";
-					Quh <= "0000";
-					Qdm <= "0010";
-					Qum <= "0000";
-					index:=index+1;
-					wait for 1 sec;
-				end loop;
-			end if;
-	end process;
-
+    
     with Qum Select
         A <= "1000000" when "0000", --0
             "1111001" when "0001", --1

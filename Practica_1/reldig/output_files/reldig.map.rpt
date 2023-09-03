@@ -1,6 +1,6 @@
 Analysis & Synthesis report for reldig
-Wed Aug 30 18:58:08 2023
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Sat Sep  2 20:05:54 2023
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
 ---------------------
@@ -17,9 +17,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -29,30 +29,31 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Aug 30 18:58:08 2023           ;
-; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                      ; reldig                                      ;
-; Top-level Entity Name              ; reldig                                      ;
-; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Sat Sep  2 20:05:54 2023              ;
+; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                      ; reldig                                         ;
+; Top-level Entity Name              ; reldig                                         ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
+; UFM blocks                         ; N/A until Partition Merge                      ;
+; ADC blocks                         ; N/A until Partition Merge                      ;
++------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -146,8 +147,8 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -162,23 +163,27 @@ refer to the applicable agreement for further details.
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Aug 30 18:57:46 2023
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Sat Sep  2 20:05:48 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off reldig -c reldig
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file reldig.vhd
-    Info (12022): Found design unit 1: reldig-Behavioral File: /home/alumno/reldig/reldig.vhd Line: 13
-    Info (12023): Found entity 1: reldig File: /home/alumno/reldig/reldig.vhd Line: 5
+    Info (12022): Found design unit 1: reldig-Behavioral File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 13
+    Info (12023): Found entity 1: reldig File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 5
 Info (12127): Elaborating entity "reldig" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at reldig.vhd(15): object "rapido" assigned a value but never read File: /home/alumno/reldig/reldig.vhd Line: 15
-Error (10533): VHDL Wait Statement error at reldig.vhd(123): Wait Statement must contain condition clause with UNTIL keyword File: /home/alumno/reldig/reldig.vhd Line: 123
-Error (10442): VHDL Process Statement error at reldig.vhd(114): Process Statement must contain either a sensitivity list or a Wait Statement File: /home/alumno/reldig/reldig.vhd Line: 114
+Warning (10036): Verilog HDL or VHDL warning at reldig.vhd(15): object "rapido" assigned a value but never read File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 15
+Warning (10492): VHDL Process Statement warning at reldig.vhd(116): signal "Qdh" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at reldig.vhd(116): signal "Quh" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at reldig.vhd(116): signal "Qdm" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at reldig.vhd(116): signal "Qum" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 116
+Error (10533): VHDL Wait Statement error at reldig.vhd(122): Wait Statement must contain condition clause with UNTIL keyword File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 122
+Error (10441): VHDL Process Statement error at reldig.vhd(113): Process Statement cannot contain both a sensitivity list and a Wait Statement File: /home/suaz/Documentos/Escuela/VLSI/lib/Practica_1/reldig/reldig.vhd Line: 113
 Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 2 warnings
-    Error: Peak virtual memory: 1136 megabytes
-    Error: Processing ended: Wed Aug 30 18:58:08 2023
-    Error: Elapsed time: 00:00:22
-    Error: Total CPU time (on all processors): 00:00:29
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 6 warnings
+    Error: Peak virtual memory: 407 megabytes
+    Error: Processing ended: Sat Sep  2 20:05:54 2023
+    Error: Elapsed time: 00:00:06
+    Error: Total CPU time (on all processors): 00:00:15
 
 
