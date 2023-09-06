@@ -1,6 +1,6 @@
 Timing Analyzer report for reldig
-Wed Aug 30 17:44:23 2023
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Wed Sep  6 16:17:52 2023
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
 ---------------------
@@ -53,9 +53,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -65,22 +65,23 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                     ;
-+-----------------------+-----------------------------------------------------+
-; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Timing Analyzer       ; Legacy Timing Analyzer                              ;
-; Revision Name         ; reldig                                              ;
-; Device Family         ; MAX 10                                              ;
-; Device Name           ; 10M50DAF484C7G                                      ;
-; Timing Models         ; Final                                               ;
-; Delay Model           ; Combined                                            ;
-; Rise/Fall Delays      ; Enabled                                             ;
-+-----------------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                        ;
++-----------------------+--------------------------------------------------------+
+; Quartus Prime Version ; Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
+; Revision Name         ; reldig                                                 ;
+; Device Family         ; MAX 10                                                 ;
+; Device Name           ; 10M50DAF484C7G                                         ;
+; Timing Models         ; Final                                                  ;
+; Delay Model           ; Combined                                               ;
+; Rise/Fall Delays      ; Enabled                                                ;
++-----------------------+--------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -88,15 +89,16 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.04        ;
-; Maximum used               ; 2           ;
+; Average used               ; 1.03        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.9%      ;
+;     Processor 2            ;   1.0%      ;
+;     Processors 3-4         ;   1.0%      ;
 +----------------------------+-------------+
 
 
@@ -118,11 +120,11 @@ refer to the applicable agreement for further details.
 +------------+-----------------+---------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note                                           ;
 +------------+-----------------+---------------------+------------------------------------------------+
-; 197.04 MHz ; 197.04 MHz      ; reloj               ;                                                ;
-; 747.38 MHz ; 416.15 MHz      ; z                   ; limit due to minimum period restriction (tmin) ;
-; 787.4 MHz  ; 416.15 MHz      ; \divisor:CUENTA[22] ; limit due to minimum period restriction (tmin) ;
-; 791.77 MHz ; 416.15 MHz      ; n                   ; limit due to minimum period restriction (tmin) ;
-; 833.33 MHz ; 416.15 MHz      ; e                   ; limit due to minimum period restriction (tmin) ;
+; 194.67 MHz ; 194.67 MHz      ; reloj               ;                                                ;
+; 718.39 MHz ; 416.15 MHz      ; \divisor:CUENTA[22] ; limit due to minimum period restriction (tmin) ;
+; 809.72 MHz ; 416.15 MHz      ; n                   ; limit due to minimum period restriction (tmin) ;
+; 822.37 MHz ; 416.15 MHz      ; e                   ; limit due to minimum period restriction (tmin) ;
+; 840.34 MHz ; 416.15 MHz      ; z                   ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+---------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -132,11 +134,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; reloj               ; -4.075 ; -65.937       ;
-; z                   ; -0.338 ; -1.040        ;
-; \divisor:CUENTA[22] ; -0.270 ; -0.844        ;
-; n                   ; -0.263 ; -0.760        ;
-; e                   ; -0.200 ; -0.670        ;
+; reloj               ; -4.137 ; -66.223       ;
+; \divisor:CUENTA[22] ; -0.392 ; -0.965        ;
+; n                   ; -0.235 ; -0.725        ;
+; e                   ; -0.216 ; -0.770        ;
+; z                   ; -0.190 ; -0.619        ;
 +---------------------+--------+---------------+
 
 
@@ -145,11 +147,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; e                   ; 0.347 ; 0.000         ;
 ; n                   ; 0.347 ; 0.000         ;
-; z                   ; 0.347 ; 0.000         ;
 ; \divisor:CUENTA[22] ; 0.348 ; 0.000         ;
-; reloj               ; 0.638 ; 0.000         ;
+; e                   ; 0.348 ; 0.000         ;
+; z                   ; 0.348 ; 0.000         ;
+; reloj               ; 0.639 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -158,8 +160,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; e     ; -2.211 ; -8.844                ;
-; z     ; -1.179 ; -4.716                ;
+; e     ; -1.888 ; -7.552                ;
+; z     ; -0.924 ; -3.696                ;
 +-------+--------+-----------------------+
 
 
@@ -168,8 +170,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+-----------------------+
 ; Clock ; Slack ; End Point TNS         ;
 +-------+-------+-----------------------+
-; z     ; 1.004 ; 0.000                 ;
-; e     ; 2.056 ; 0.000                 ;
+; z     ; 0.790 ; 0.000                 ;
+; e     ; 1.774 ; 0.000                 ;
 +-------+-------+-----------------------+
 
 
@@ -197,11 +199,11 @@ No synchronizer chains to report.
 +------------+-----------------+---------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note                                           ;
 +------------+-----------------+---------------------+------------------------------------------------+
-; 211.82 MHz ; 211.82 MHz      ; reloj               ;                                                ;
-; 827.81 MHz ; 416.15 MHz      ; z                   ; limit due to minimum period restriction (tmin) ;
-; 861.33 MHz ; 416.15 MHz      ; n                   ; limit due to minimum period restriction (tmin) ;
-; 871.84 MHz ; 416.15 MHz      ; \divisor:CUENTA[22] ; limit due to minimum period restriction (tmin) ;
-; 913.24 MHz ; 416.15 MHz      ; e                   ; limit due to minimum period restriction (tmin) ;
+; 207.3 MHz  ; 207.3 MHz       ; reloj               ;                                                ;
+; 793.65 MHz ; 416.15 MHz      ; \divisor:CUENTA[22] ; limit due to minimum period restriction (tmin) ;
+; 892.06 MHz ; 416.15 MHz      ; n                   ; limit due to minimum period restriction (tmin) ;
+; 898.47 MHz ; 416.15 MHz      ; e                   ; limit due to minimum period restriction (tmin) ;
+; 921.66 MHz ; 416.15 MHz      ; z                   ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+---------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -211,11 +213,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; reloj               ; -3.721 ; -57.890       ;
-; z                   ; -0.208 ; -0.587        ;
-; n                   ; -0.161 ; -0.350        ;
-; \divisor:CUENTA[22] ; -0.147 ; -0.419        ;
-; e                   ; -0.095 ; -0.260        ;
+; reloj               ; -3.824 ; -58.355       ;
+; \divisor:CUENTA[22] ; -0.260 ; -0.508        ;
+; n                   ; -0.121 ; -0.307        ;
+; e                   ; -0.113 ; -0.354        ;
+; z                   ; -0.085 ; -0.214        ;
 +---------------------+--------+---------------+
 
 
@@ -225,9 +227,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
 ; \divisor:CUENTA[22] ; 0.312 ; 0.000         ;
-; e                   ; 0.312 ; 0.000         ;
 ; n                   ; 0.312 ; 0.000         ;
 ; z                   ; 0.312 ; 0.000         ;
+; e                   ; 0.313 ; 0.000         ;
 ; reloj               ; 0.592 ; 0.000         ;
 +---------------------+-------+---------------+
 
@@ -237,8 +239,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+----------------------+
 ; Clock ; Slack  ; End Point TNS        ;
 +-------+--------+----------------------+
-; e     ; -1.934 ; -7.736               ;
-; z     ; -0.969 ; -3.876               ;
+; e     ; -1.645 ; -6.580               ;
+; z     ; -0.741 ; -2.964               ;
 +-------+--------+----------------------+
 
 
@@ -247,8 +249,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+----------------------+
 ; Clock ; Slack ; End Point TNS        ;
 +-------+-------+----------------------+
-; z     ; 0.919 ; 0.000                ;
-; e     ; 1.904 ; 0.000                ;
+; z     ; 0.724 ; 0.000                ;
+; e     ; 1.649 ; 0.000                ;
 +-------+-------+----------------------+
 
 
@@ -276,11 +278,11 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; reloj               ; -1.311 ; -15.272       ;
-; z                   ; 0.408  ; 0.000         ;
-; \divisor:CUENTA[22] ; 0.441  ; 0.000         ;
-; n                   ; 0.445  ; 0.000         ;
-; e                   ; 0.486  ; 0.000         ;
+; reloj               ; -1.340 ; -15.056       ;
+; \divisor:CUENTA[22] ; 0.386  ; 0.000         ;
+; n                   ; 0.472  ; 0.000         ;
+; e                   ; 0.478  ; 0.000         ;
+; z                   ; 0.490  ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -293,7 +295,7 @@ No synchronizer chains to report.
 ; e                   ; 0.152 ; 0.000         ;
 ; n                   ; 0.152 ; 0.000         ;
 ; z                   ; 0.152 ; 0.000         ;
-; reloj               ; 0.247 ; 0.000         ;
+; reloj               ; 0.246 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -302,8 +304,8 @@ No synchronizer chains to report.
 +-------+--------+----------------------+
 ; Clock ; Slack  ; End Point TNS        ;
 +-------+--------+----------------------+
-; e     ; -0.469 ; -1.876               ;
-; z     ; 0.010  ; 0.000                ;
+; e     ; -0.330 ; -1.320               ;
+; z     ; 0.135  ; 0.000                ;
 +-------+--------+----------------------+
 
 
@@ -312,8 +314,8 @@ No synchronizer chains to report.
 +-------+-------+----------------------+
 ; Clock ; Slack ; End Point TNS        ;
 +-------+-------+----------------------+
-; z     ; 0.348 ; 0.000                ;
-; e     ; 0.847 ; 0.000                ;
+; z     ; 0.244 ; 0.000                ;
+; e     ; 0.729 ; 0.000                ;
 +-------+-------+----------------------+
 
 
@@ -322,7 +324,7 @@ No synchronizer chains to report.
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; reloj               ; -3.000 ; -32.008           ;
+; reloj               ; -3.000 ; -31.952           ;
 ; \divisor:CUENTA[22] ; -1.000 ; -5.000            ;
 ; e                   ; -1.000 ; -5.000            ;
 ; n                   ; -1.000 ; -5.000            ;
@@ -341,18 +343,18 @@ No synchronizer chains to report.
 +----------------------+---------+-------+----------+---------+---------------------+
 ; Clock                ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack     ; -4.075  ; 0.152 ; -2.211   ; 0.348   ; -3.000              ;
-;  \divisor:CUENTA[22] ; -0.270  ; 0.152 ; N/A      ; N/A     ; -1.403              ;
-;  e                   ; -0.200  ; 0.152 ; -2.211   ; 0.847   ; -1.403              ;
-;  n                   ; -0.263  ; 0.152 ; N/A      ; N/A     ; -1.403              ;
-;  reloj               ; -4.075  ; 0.247 ; N/A      ; N/A     ; -3.000              ;
-;  z                   ; -0.338  ; 0.152 ; -1.179   ; 0.348   ; -1.403              ;
-; Design-wide TNS      ; -69.251 ; 0.0   ; -13.56   ; 0.0     ; -68.941             ;
-;  \divisor:CUENTA[22] ; -0.844  ; 0.000 ; N/A      ; N/A     ; -7.015              ;
-;  e                   ; -0.670  ; 0.000 ; -8.844   ; 0.000   ; -7.015              ;
-;  n                   ; -0.760  ; 0.000 ; N/A      ; N/A     ; -7.015              ;
-;  reloj               ; -65.937 ; 0.000 ; N/A      ; N/A     ; -42.284             ;
-;  z                   ; -1.040  ; 0.000 ; -4.716   ; 0.000   ; -5.612              ;
+; Worst-case Slack     ; -4.137  ; 0.152 ; -1.888   ; 0.244   ; -3.000              ;
+;  \divisor:CUENTA[22] ; -0.392  ; 0.152 ; N/A      ; N/A     ; -1.403              ;
+;  e                   ; -0.216  ; 0.152 ; -1.888   ; 0.729   ; -1.403              ;
+;  n                   ; -0.235  ; 0.152 ; N/A      ; N/A     ; -1.403              ;
+;  reloj               ; -4.137  ; 0.246 ; N/A      ; N/A     ; -3.000              ;
+;  z                   ; -0.190  ; 0.152 ; -0.924   ; 0.244   ; -1.403              ;
+; Design-wide TNS      ; -69.302 ; 0.0   ; -11.248  ; 0.0     ; -68.941             ;
+;  \divisor:CUENTA[22] ; -0.965  ; 0.000 ; N/A      ; N/A     ; -7.015              ;
+;  e                   ; -0.770  ; 0.000 ; -7.552   ; 0.000   ; -7.015              ;
+;  n                   ; -0.725  ; 0.000 ; N/A      ; N/A     ; -7.015              ;
+;  reloj               ; -66.223 ; 0.000 ; N/A      ; N/A     ; -42.284             ;
+;  z                   ; -0.619  ; 0.000 ; -3.696   ; 0.000   ; -5.612              ;
 +----------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -479,7 +481,7 @@ No synchronizer chains to report.
 ; W[4]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
 ; W[5]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
 ; W[6]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
-; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-06 V                   ; 2.36 V              ; -0.0174 V           ; 0.144 V                              ; 0.094 V                              ; 6.45e-10 s                  ; 7.22e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-06 V                  ; 2.36 V             ; -0.0174 V          ; 0.144 V                             ; 0.094 V                             ; 6.45e-10 s                 ; 7.22e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-06 V                   ; 2.36 V              ; -0.0174 V           ; 0.144 V                              ; 0.094 V                              ; 6.44e-10 s                  ; 7.22e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-06 V                  ; 2.36 V             ; -0.0174 V          ; 0.144 V                             ; 0.094 V                             ; 6.44e-10 s                 ; 7.22e-10 s                 ; No                        ; Yes                       ;
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -692,12 +694,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Aug 30 17:44:19 2023
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Wed Sep  6 16:17:49 2023
 Info: Command: quartus_sta reldig -c reldig
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'reldig.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -714,32 +716,32 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.075
+Info (332146): Worst-case setup slack is -4.137
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.075             -65.937 reloj 
-    Info (332119):    -0.338              -1.040 z 
-    Info (332119):    -0.270              -0.844 \divisor:CUENTA[22] 
-    Info (332119):    -0.263              -0.760 n 
-    Info (332119):    -0.200              -0.670 e 
+    Info (332119):    -4.137             -66.223 reloj 
+    Info (332119):    -0.392              -0.965 \divisor:CUENTA[22] 
+    Info (332119):    -0.235              -0.725 n 
+    Info (332119):    -0.216              -0.770 e 
+    Info (332119):    -0.190              -0.619 z 
 Info (332146): Worst-case hold slack is 0.347
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.347               0.000 e 
     Info (332119):     0.347               0.000 n 
-    Info (332119):     0.347               0.000 z 
     Info (332119):     0.348               0.000 \divisor:CUENTA[22] 
-    Info (332119):     0.638               0.000 reloj 
-Info (332146): Worst-case recovery slack is -2.211
+    Info (332119):     0.348               0.000 e 
+    Info (332119):     0.348               0.000 z 
+    Info (332119):     0.639               0.000 reloj 
+Info (332146): Worst-case recovery slack is -1.888
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.211              -8.844 e 
-    Info (332119):    -1.179              -4.716 z 
-Info (332146): Worst-case removal slack is 1.004
+    Info (332119):    -1.888              -7.552 e 
+    Info (332119):    -0.924              -3.696 z 
+Info (332146): Worst-case removal slack is 0.790
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.004               0.000 z 
-    Info (332119):     2.056               0.000 e 
+    Info (332119):     0.790               0.000 z 
+    Info (332119):     1.774               0.000 e 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -753,32 +755,32 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.721
+Info (332146): Worst-case setup slack is -3.824
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.721             -57.890 reloj 
-    Info (332119):    -0.208              -0.587 z 
-    Info (332119):    -0.161              -0.350 n 
-    Info (332119):    -0.147              -0.419 \divisor:CUENTA[22] 
-    Info (332119):    -0.095              -0.260 e 
+    Info (332119):    -3.824             -58.355 reloj 
+    Info (332119):    -0.260              -0.508 \divisor:CUENTA[22] 
+    Info (332119):    -0.121              -0.307 n 
+    Info (332119):    -0.113              -0.354 e 
+    Info (332119):    -0.085              -0.214 z 
 Info (332146): Worst-case hold slack is 0.312
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.312               0.000 \divisor:CUENTA[22] 
-    Info (332119):     0.312               0.000 e 
     Info (332119):     0.312               0.000 n 
     Info (332119):     0.312               0.000 z 
+    Info (332119):     0.313               0.000 e 
     Info (332119):     0.592               0.000 reloj 
-Info (332146): Worst-case recovery slack is -1.934
+Info (332146): Worst-case recovery slack is -1.645
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.934              -7.736 e 
-    Info (332119):    -0.969              -3.876 z 
-Info (332146): Worst-case removal slack is 0.919
+    Info (332119):    -1.645              -6.580 e 
+    Info (332119):    -0.741              -2.964 z 
+Info (332146): Worst-case removal slack is 0.724
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.919               0.000 z 
-    Info (332119):     1.904               0.000 e 
+    Info (332119):     0.724               0.000 z 
+    Info (332119):     1.649               0.000 e 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -790,14 +792,14 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.311
+Info (332146): Worst-case setup slack is -1.340
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.311             -15.272 reloj 
-    Info (332119):     0.408               0.000 z 
-    Info (332119):     0.441               0.000 \divisor:CUENTA[22] 
-    Info (332119):     0.445               0.000 n 
-    Info (332119):     0.486               0.000 e 
+    Info (332119):    -1.340             -15.056 reloj 
+    Info (332119):     0.386               0.000 \divisor:CUENTA[22] 
+    Info (332119):     0.472               0.000 n 
+    Info (332119):     0.478               0.000 e 
+    Info (332119):     0.490               0.000 z 
 Info (332146): Worst-case hold slack is 0.152
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -805,21 +807,21 @@ Info (332146): Worst-case hold slack is 0.152
     Info (332119):     0.152               0.000 e 
     Info (332119):     0.152               0.000 n 
     Info (332119):     0.152               0.000 z 
-    Info (332119):     0.247               0.000 reloj 
-Info (332146): Worst-case recovery slack is -0.469
+    Info (332119):     0.246               0.000 reloj 
+Info (332146): Worst-case recovery slack is -0.330
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.469              -1.876 e 
-    Info (332119):     0.010               0.000 z 
-Info (332146): Worst-case removal slack is 0.348
+    Info (332119):    -0.330              -1.320 e 
+    Info (332119):     0.135               0.000 z 
+Info (332146): Worst-case removal slack is 0.244
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.348               0.000 z 
-    Info (332119):     0.847               0.000 e 
+    Info (332119):     0.244               0.000 z 
+    Info (332119):     0.729               0.000 e 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -32.008 reloj 
+    Info (332119):    -3.000             -31.952 reloj 
     Info (332119):    -1.000              -5.000 \divisor:CUENTA[22] 
     Info (332119):    -1.000              -5.000 e 
     Info (332119):    -1.000              -5.000 n 
@@ -827,9 +829,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1065 megabytes
-    Info: Processing ended: Wed Aug 30 17:44:23 2023
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 521 megabytes
+    Info: Processing ended: Wed Sep  6 16:17:52 2023
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

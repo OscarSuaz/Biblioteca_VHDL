@@ -1,5 +1,5 @@
 Flow report for reldig
-Sat Sep  2 20:05:54 2023
+Wed Sep  6 16:17:52 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -41,24 +41,24 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Flow Failed - Sat Sep  2 20:05:54 2023         ;
+; Flow Status                        ; Successful - Wed Sep  6 16:17:49 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; reldig                                         ;
 ; Top-level Entity Name              ; reldig                                         ;
 ; Family                             ; MAX 10                                         ;
 ; Device                             ; 10M50DAF484C7G                                 ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 94 / 49,760 ( < 1 % )                          ;
+;     Total combinational functions  ; 94 / 49,760 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 47 / 49,760 ( < 1 % )                          ;
+; Total registers                    ; 47                                             ;
+; Total pins                         ; 29 / 360 ( 8 % )                               ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                  ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/02/2023 20:05:48 ;
+; Start date & time ; 09/06/2023 16:17:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; reldig              ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 66640978625526.169370674815199         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 66640978625526.169403865104958         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -97,8 +97,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 407 MB              ; 00:00:15                           ;
-; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:15                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 439 MB              ; 00:00:15                           ;
+; Fitter               ; 00:00:08     ; 1.0                     ; 1079 MB             ; 00:00:11                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 391 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 521 MB              ; 00:00:03                           ;
+; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:30                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,6 +111,9 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name          ; OS Version ; Processor type ;
 +----------------------+------------------+------------------+------------+----------------+
 ; Analysis & Synthesis ; suaz-intel       ; Debian GNU/Linux ; 12         ; x86_64         ;
+; Fitter               ; suaz-intel       ; Debian GNU/Linux ; 12         ; x86_64         ;
+; Assembler            ; suaz-intel       ; Debian GNU/Linux ; 12         ; x86_64         ;
+; Timing Analyzer      ; suaz-intel       ; Debian GNU/Linux ; 12         ; x86_64         ;
 +----------------------+------------------+------------------+------------+----------------+
 
 
@@ -115,6 +121,9 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off reldig -c reldig
+quartus_fit --read_settings_files=off --write_settings_files=off reldig -c reldig
+quartus_asm --read_settings_files=off --write_settings_files=off reldig -c reldig
+quartus_sta reldig -c reldig
 
 
 

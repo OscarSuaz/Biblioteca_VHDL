@@ -3,34 +3,26 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'reloj'
-Slack : -4.075
-TNS   : -65.937
-
-Type  : Slow 1200mV 85C Model Setup 'z'
-Slack : -0.338
-TNS   : -1.040
+Slack : -4.137
+TNS   : -66.223
 
 Type  : Slow 1200mV 85C Model Setup '\divisor:CUENTA[22]'
-Slack : -0.270
-TNS   : -0.844
+Slack : -0.392
+TNS   : -0.965
 
 Type  : Slow 1200mV 85C Model Setup 'n'
-Slack : -0.263
-TNS   : -0.760
+Slack : -0.235
+TNS   : -0.725
 
 Type  : Slow 1200mV 85C Model Setup 'e'
-Slack : -0.200
-TNS   : -0.670
+Slack : -0.216
+TNS   : -0.770
 
-Type  : Slow 1200mV 85C Model Hold 'e'
-Slack : 0.347
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Setup 'z'
+Slack : -0.190
+TNS   : -0.619
 
 Type  : Slow 1200mV 85C Model Hold 'n'
-Slack : 0.347
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'z'
 Slack : 0.347
 TNS   : 0.000
 
@@ -38,24 +30,32 @@ Type  : Slow 1200mV 85C Model Hold '\divisor:CUENTA[22]'
 Slack : 0.348
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Hold 'e'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'z'
+Slack : 0.348
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Hold 'reloj'
-Slack : 0.638
+Slack : 0.639
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'e'
-Slack : -2.211
-TNS   : -8.844
+Slack : -1.888
+TNS   : -7.552
 
 Type  : Slow 1200mV 85C Model Recovery 'z'
-Slack : -1.179
-TNS   : -4.716
+Slack : -0.924
+TNS   : -3.696
 
 Type  : Slow 1200mV 85C Model Removal 'z'
-Slack : 1.004
+Slack : 0.790
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'e'
-Slack : 2.056
+Slack : 1.774
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reloj'
@@ -79,30 +79,26 @@ Slack : -1.403
 TNS   : -5.612
 
 Type  : Slow 1200mV 0C Model Setup 'reloj'
-Slack : -3.721
-TNS   : -57.890
-
-Type  : Slow 1200mV 0C Model Setup 'z'
-Slack : -0.208
-TNS   : -0.587
-
-Type  : Slow 1200mV 0C Model Setup 'n'
-Slack : -0.161
-TNS   : -0.350
+Slack : -3.824
+TNS   : -58.355
 
 Type  : Slow 1200mV 0C Model Setup '\divisor:CUENTA[22]'
-Slack : -0.147
-TNS   : -0.419
+Slack : -0.260
+TNS   : -0.508
+
+Type  : Slow 1200mV 0C Model Setup 'n'
+Slack : -0.121
+TNS   : -0.307
 
 Type  : Slow 1200mV 0C Model Setup 'e'
-Slack : -0.095
-TNS   : -0.260
+Slack : -0.113
+TNS   : -0.354
+
+Type  : Slow 1200mV 0C Model Setup 'z'
+Slack : -0.085
+TNS   : -0.214
 
 Type  : Slow 1200mV 0C Model Hold '\divisor:CUENTA[22]'
-Slack : 0.312
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'e'
 Slack : 0.312
 TNS   : 0.000
 
@@ -114,24 +110,28 @@ Type  : Slow 1200mV 0C Model Hold 'z'
 Slack : 0.312
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'e'
+Slack : 0.313
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Hold 'reloj'
 Slack : 0.592
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'e'
-Slack : -1.934
-TNS   : -7.736
+Slack : -1.645
+TNS   : -6.580
 
 Type  : Slow 1200mV 0C Model Recovery 'z'
-Slack : -0.969
-TNS   : -3.876
+Slack : -0.741
+TNS   : -2.964
 
 Type  : Slow 1200mV 0C Model Removal 'z'
-Slack : 0.919
+Slack : 0.724
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'e'
-Slack : 1.904
+Slack : 1.649
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reloj'
@@ -155,23 +155,23 @@ Slack : -1.403
 TNS   : -5.612
 
 Type  : Fast 1200mV 0C Model Setup 'reloj'
-Slack : -1.311
-TNS   : -15.272
-
-Type  : Fast 1200mV 0C Model Setup 'z'
-Slack : 0.408
-TNS   : 0.000
+Slack : -1.340
+TNS   : -15.056
 
 Type  : Fast 1200mV 0C Model Setup '\divisor:CUENTA[22]'
-Slack : 0.441
+Slack : 0.386
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'n'
-Slack : 0.445
+Slack : 0.472
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'e'
-Slack : 0.486
+Slack : 0.478
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'z'
+Slack : 0.490
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold '\divisor:CUENTA[22]'
@@ -191,28 +191,28 @@ Slack : 0.152
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'reloj'
-Slack : 0.247
+Slack : 0.246
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'e'
-Slack : -0.469
-TNS   : -1.876
+Slack : -0.330
+TNS   : -1.320
 
 Type  : Fast 1200mV 0C Model Recovery 'z'
-Slack : 0.010
+Slack : 0.135
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'z'
-Slack : 0.348
+Slack : 0.244
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'e'
-Slack : 0.847
+Slack : 0.729
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reloj'
 Slack : -3.000
-TNS   : -32.008
+TNS   : -31.952
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width '\divisor:CUENTA[22]'
 Slack : -1.000
