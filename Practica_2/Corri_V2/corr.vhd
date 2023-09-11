@@ -6,7 +6,7 @@ use IEEE.std_logic_unsigned.all;
 entity corr is
     port(
         reloj : in std_logic;
-		  sele : in std_logic;
+		sele : in std_logic;
         display1,display2,display3,display4,
         display5,display6 : buffer std_logic_vector (6 downto 0)
     );

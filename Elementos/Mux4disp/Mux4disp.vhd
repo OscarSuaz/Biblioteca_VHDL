@@ -4,12 +4,12 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity Mux4disp is
     port( reloj : in std_logic;
-		  D0 : in std_logic_vector (6 downto 0);
-		  D1 : in std_logic_vector (6 downto 0);
-		  D2 : in std_logic_vector (6 downto 0);
-		  D3 : in std_logic_vector (6 downto 0);
+	    D0 : in std_logic_vector (6 downto 0);
+	    D1 : in std_logic_vector (6 downto 0);
+	    D2 : in std_logic_vector (6 downto 0);
+	    D3 : in std_logic_vector (6 downto 0);
         AN : out std_logic_vector (3 downto 0);
-		  L : out std_logic_vector (6 downto 0));
+	    L : out std_logic_vector (6 downto 0));
 end Mux4disp;
 
 architecture Behavioral of Mux4disp is
