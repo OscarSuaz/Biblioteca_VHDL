@@ -1,0 +1,61 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use IEEE.std_logic_unsigned.all;
+
+entity Prueba is
+    port (
+        clk: in std_logic;
+        d,r,t: out std_logic;
+        ini: in std_logic;
+        sw: in std_logic_vector(3 downto 0)
+    );
+end entity Prueba;
+
+architecture Behavioral of Prueba is
+    component Divisor
+        port (
+            clk: in std_logic;
+            div_clk: out std_logic
+        );
+    end component;
+
+    component RelojMS
+        port (
+            clk: in std_logic;
+            Tms: in std_logic_vector(19 downto 0);
+            reloj: out std_logic
+        );
+    end component;
+
+    component Timer
+        port (
+            clk: in std_logic;
+            start: in std_logic;
+            Tms: in std_logic_vector(19 downto 0);
+            P: out std_logic
+        );
+    end component;
+
+    signal div,tim,rel: std_logic;
+    signal valor: std_logic_vector(19 downto 0);
+begin
+    Inst_Divisor: Divisor port map(clk=> clk,div_clk=>div);
+    Inst_RelojMS: RelojMS port map(clk=>clk,Tms=>valor,reloj=>rel);
+    Inst_Timer: Timer port map(clk=>clk,start=>ini,Tms=>valor,P=>tim);
+
+    d<=div;
+    r<=rel;
+    t<=tim;
+
+    with sw select
+        valor<=x"00064" when "0000", --100
+        x"003e8" when "0001", --1000
+        x"007d0" when "0010", --2000
+        x"01388" when "0011", --5000
+        x"00032" when "0100", --50
+        x"000c8" when "0101", --200
+        x"001f4" when "0110", --500
+        x"0012c" when "0111", --300
+        x"0000a" when others;
+end architecture Behavioral;
