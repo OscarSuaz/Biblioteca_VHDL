@@ -77,4 +77,27 @@ eco_pasado<= eco_sinc;
 eco_sinc <=eco_nsinc; 
 eco_nsinc <= sensor_eco;
 end if;
-end process; -- Trigger
+end process; 
+
+Decodificador : process( digito )
+begin
+    if digito=X"0" then segmentos <= X"81";
+    elsif digito=X"1" then segmentos <=X"f3";
+    elsif digito=X"2" then segmentos <=X"48";
+    elsif digito=X"3" then segmentos <=X"61";
+    elsif digito=X"4" then segmentos <=X"33";
+    elsif digito=X"5" then segmentos <=X"25";
+    elsif digito=X"6" then segmentos <=X"05";
+    elsif digito=X"7" then segmentos <=X"f1";
+    elsif digito=X"8" then segmentos <=X"01";
+    elsif digito=X"9" then segmentos <=X"21";
+    elsif digito=X"a" then segmentos <=X"11";
+    elsif digito=X"b" then segmentos <=X"07";
+    elsif digito=X"c" then segmentos <=X"8d";
+    elsif digito=X"d" then segmentos <=X"43";
+    elsif digito=X"e" then segmentos <=X"0d";
+    else
+    segmentos <=X"1d";
+    end if;
+end process ; -- Decodificador
+end Behavioral;-- Trigger
