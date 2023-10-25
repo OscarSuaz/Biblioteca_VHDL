@@ -1,4 +1,4 @@
-library library IEEE;
+library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
@@ -97,32 +97,32 @@ begin
     baud<="011";
 
     with dato_bin select
-        hex_val <= X"30" when "0000";
-        hex_val <= X"31" when "0001";
-        hex_val <= X"32" when "0010";
-        hex_val <= X"33" when "0011";
-        hex_val <= X"34" when "0100";
-        hex_val <= X"35" when "0101";
-        hex_val <= X"36" when "0110";
-        hex_val <= X"37" when "0111";
-        hex_val <= X"38" when "1000";
-        hex_val <= X"39" when "1001";
-        hex_val <= X"41" when "1010";
-        hex_val <= X"42" when "1011";
-        hex_val <= X"43" when "1100";
-        hex_val <= X"44" when "1101";
-        hex_val <= X"45" when "1110";
-        hex_val <= X"46" when "1111";
+        hex_val <= X"30" when "0000",
+        X"31" when "0001",
+        X"32" when "0010",
+        X"33" when "0011",
+        X"34" when "0100",
+        X"35" when "0101",
+        X"36" when "0110",
+        X"37" when "0111",
+        X"38" when "1000",
+        X"39" when "1001",
+        X"41" when "1010",
+        X"42" when "1011",
+        X"43" when "1100",
+        X"44" when "1101",
+        X"45" when "1110",
+        X"46" when "1111",
         X"23" when others;
 
     with baud select
-        pre_val <= 41600 when "000" --1200 bauds
-        pre_val <= 20800 when "001" --2400 bauds
-        pre_val <= 10400 when "010" --4800 bauds
-        pre_val <= 5200 when "011" --9600 bauds
-        pre_val <= 2600 when "100" --19200 bauds
-        pre_val <= 1300 when "101" --38400 bauds
-        pre_val <= 866 when "110" --57600 bauds
+        pre_val <= 41600 when "000", --1200 bauds
+        20800 when "001", --2400 bauds
+        10400 when "010", --4800 bauds
+        5200 when "011", --9600 bauds
+        2600 when "100", --19200 bauds
+        1300 when "101", --38400 bauds
+        866 when "110", --57600 bauds
         432 when others; --115200
     
 end architecture behavioral;
