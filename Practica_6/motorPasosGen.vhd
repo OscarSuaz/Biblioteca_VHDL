@@ -8,14 +8,14 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity MotPasos is
     Port ( dir : in  STD_LOGIC; --0 horario, 1 antihorario
-			  rst : in std_logic;
-           paso : in  STD_LOGIC; --Si se activa, se mueve un paso
-           modo : in STD_LOGIC_VECTOR(1 downto 0); --00 Fase simple, 01 Fase doble, 10 Fase intermedia, 11 Modo bipolar
-           MOT : out  STD_LOGIC_VECTOR(3 downto 0)); --Salida de los pines del motor
+			rst : in std_logic;
+            paso : in  STD_LOGIC; --Si se activa, se mueve un paso
+            modo : in STD_LOGIC_VECTOR(1 downto 0); --00 Fase simple, 01 Fase doble, 10 Fase intermedia, 11 Modo bipolar
+            MOT : out  STD_LOGIC_VECTOR(3 downto 0)); --Salida de los pines del motor
 end MotPasos;
 
 architecture Behavioral of MotPasos is
-   TYPE estado IS(sm0,sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10);
+    TYPE estado IS(sm0,sm1,sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10);
 	SIGNAL pres_s, next_s : estado; --Estado presente y siguiente
 	SIGNAL motor : std_logic_vector(3 downto 0);
 begin
