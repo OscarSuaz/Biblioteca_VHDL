@@ -13,9 +13,9 @@ end RX;
 architecture Behavioral of RX is
     signal BUFF: std_logic_vector(9 downto 0);
     signal Flag: std_logic:='0';
-    signal PRE: integer range 0 downto 5208 :=0;
-    signal INDICE: integer range 0 downto 9 :=0;
-    signal PRE_val: integer range 0 downto 41600;
+    signal PRE: integer range 0 to 5208 :=0;
+    signal INDICE: integer range 0 to 9 :=0;
+    signal PRE_val: integer range 0 to 41600;
     signal baud: std_logic_vector(2 downto 0);
 
     begin
@@ -48,7 +48,7 @@ architecture Behavioral of RX is
                     end if;
                 end if;
             end if;
-        end process RX_dato
+        end process RX_dato;
 
         baud<="011";
         with (baud) select
