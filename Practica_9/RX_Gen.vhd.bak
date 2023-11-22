@@ -5,8 +5,10 @@ use IEEE.numeric_std.all;
 entity RX is
 port (
     Clk: in std_logic;
-    LEDS:out std_logic_vector(7 downto 0);
-    RX_WIRE: in std_logic
+    DATO:out std_logic_vector(7 downto 0);
+    RX_WIRE: in std_logic;
+    bandera: out std_logic;
+    baud: in std_logic_vector(2 downto 0)
 ) ;
 end RX;
 
@@ -16,13 +18,12 @@ architecture Behavioral of RX is
     signal PRE: integer range 0 to 5208 :=0;
     signal INDICE: integer range 0 to 9 :=0;
     signal PRE_val: integer range 0 to 41600;
-    signal baud: std_logic_vector(2 downto 0);
-
     begin
         RX_dato : process(clk)
         begin
             if (Clk'event and Clk='1') then
                 if (Flag='0' and RX_WIRE='0' ) then
+                    Bandera<='0';
                     Flag<='1';
                     indice <=0;
                     pre <=0;
@@ -39,9 +40,10 @@ architecture Behavioral of RX is
                             indice <= indice + 1;
                         else
                             if (BUFF(0)='0' and BUFF(9)='1' ) then
-                                LEDS<=BUFF(8 DOWNTO 1);
+                                DATO<=BUFF(8 DOWNTO 1);
+                                Bandera<='1';
                             else
-                                LEDS<="00000000";
+                                DATO<="00000000";
                             end if;
                             Flag<='0';
                         end if;
@@ -50,7 +52,6 @@ architecture Behavioral of RX is
             end if;
         end process RX_dato;
 
-        baud<="011";
         with (baud) select
             PRE_val <=  41600 when "000",
                         20800 when "001",
@@ -60,4 +61,6 @@ architecture Behavioral of RX is
                         1300 when "101",
                         866 when "110",
                         432 when others;
+
+        bandera<=Flag;
 end Behavioral;

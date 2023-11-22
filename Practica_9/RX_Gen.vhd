@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity RX is
+entity RX_Gen is
 port (
     Clk: in std_logic;
     DATO:out std_logic_vector(7 downto 0);
@@ -10,16 +10,16 @@ port (
     bandera: out std_logic;
     baud: in std_logic_vector(2 downto 0)
 ) ;
-end RX;
+end RX_Gen;
 
-architecture Behavioral of RX is
+architecture Behavioral of RX_Gen is
     signal BUFF: std_logic_vector(9 downto 0);
     signal Flag: std_logic:='0';
     signal PRE: integer range 0 to 5208 :=0;
     signal INDICE: integer range 0 to 9 :=0;
     signal PRE_val: integer range 0 to 41600;
     begin
-        RX_dato : process(ckl)
+        RX_dato : process(clk)
         begin
             if (Clk'event and Clk='1') then
                 if (Flag='0' and RX_WIRE='0' ) then
@@ -62,5 +62,5 @@ architecture Behavioral of RX is
                         866 when "110",
                         432 when others;
 
-        bandera<=Flag;
+        --bandera<=Flag;
 end Behavioral;
