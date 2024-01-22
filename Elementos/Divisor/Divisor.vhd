@@ -15,7 +15,7 @@ end entity Divisor;
 architecture Behavioral of Divisor is
 begin
     process(clk)
-        constant N : integer :=24;
+        constant N : integer :=19;
         variable cuenta: std_logic_vector (27 downto 0):=X"0000000";
     begin
         if rising_edge (clk) then

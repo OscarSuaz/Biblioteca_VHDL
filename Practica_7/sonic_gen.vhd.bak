@@ -11,9 +11,9 @@ Port(clk: in STD_LOGIC;
     dec: out std_logic_vector (3 downto 0);
     unid: out std_logic_vector (3 downto 0);
     cm: out std_logic_vector (8 downto 0));
-end sonic_gen;
+end sonic_geno;
 
-architecture Behavioral of sonic_gen is
+architecture Behavioral of sonic_geno is
     signal cuenta: unsigned(16 downto 0) := (others =>'0');
     signal centimetros: unsigned(15 downto 0):= (others =>'0');
     signal centimetros_unid: unsigned(3 downto 0) := (others =>'0');
@@ -26,12 +26,12 @@ architecture Behavioral of sonic_gen is
     signal eco_sinc: std_logic :='0';
     signal eco_nsinc: std_logic := '0';
     signal espera: std_logic :='0';
-	         signal temporal: std_logic_vector(8 downto 0);
-	 
-begin
-    process (clk,inicio)
 
-	  begin
+
+begin
+    Trigger:process(clk,inicio)
+        signal temporal: std_logic_vector(8 downto 0);
+        begin
         if rising_edge(clk) then
             if espera='0' then
                 if inicio = '0' then
